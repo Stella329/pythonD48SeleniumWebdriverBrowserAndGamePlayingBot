@@ -6,10 +6,10 @@ from selenium.common.exceptions import StaleElementReferenceException
 
 
 # TODO MY def()
-def upgrad_tool(money, price0, stores):
+def upgrade_tool(money, price0, stores):
     if int(money.text.replace(',','')) >= price0:
-        goodName = stores_dict[price0]
-        button = driver.find_element(By.ID, value=f'buy{goodName}')  ## id="buyGrandma"
+        goodsName = stores_dict[price0]
+        button = driver.find_element(By.ID, value=f'buy{goodsName}')  ## id="buyGrandma"
         try:
             button.click()
         except StaleElementReferenceException:  ##When you buy something, that part of the page (THE STORE PART) is refreshed and Selenium "loses" those elements. You'll have to find them again
